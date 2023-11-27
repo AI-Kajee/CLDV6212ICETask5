@@ -1,0 +1,48 @@
+﻿@model CoD_Command_Center.Models.NewsAndUpdate
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>NewsAndUpdate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ArticleName" class="control-label"></label>
+                <input asp-for="ArticleName" class="form-control" />
+                <span asp-validation-for="ArticleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArticleDescription" class="control-label"></label>
+                <input asp-for="ArticleDescription" class="form-control" />
+                <span asp-validation-for="ArticleDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ACreatedAt" class="control-label"></label>
+                <input asp-for="ACreatedAt" class="form-control" />
+                <span asp-validation-for="ACreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AUpdatedAt" class="control-label"></label>
+                <input asp-for="AUpdatedAt" class="form-control" />
+                <span asp-validation-for="AUpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

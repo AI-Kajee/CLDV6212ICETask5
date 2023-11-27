@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CoD_Command_Center.Models.Codevent>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EEndDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EEndDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

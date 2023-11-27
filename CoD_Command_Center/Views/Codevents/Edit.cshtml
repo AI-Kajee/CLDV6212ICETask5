@@ -1,0 +1,49 @@
+﻿@model CoD_Command_Center.Models.Codevent
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Codevent</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EId" />
+            <div class="form-group">
+                <label asp-for="EventName" class="control-label"></label>
+                <input asp-for="EventName" class="form-control" />
+                <span asp-validation-for="EventName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventDetails" class="control-label"></label>
+                <input asp-for="EventDetails" class="form-control" />
+                <span asp-validation-for="EventDetails" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EStartDate" class="control-label"></label>
+                <input asp-for="EStartDate" class="form-control" />
+                <span asp-validation-for="EStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EEndDate" class="control-label"></label>
+                <input asp-for="EEndDate" class="form-control" />
+                <span asp-validation-for="EEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
