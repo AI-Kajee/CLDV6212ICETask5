@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CoD_Command_Center.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CoD_Command_Center.Controllers
 {
+    [Authorize]
     public class User1Controller : Controller
     {
         private readonly CoDCommandCenterContext _context;
