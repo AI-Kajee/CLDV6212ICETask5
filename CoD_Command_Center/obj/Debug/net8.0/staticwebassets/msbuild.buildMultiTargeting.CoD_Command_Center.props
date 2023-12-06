@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CoD_Command_Center.props" />
+</Project>
